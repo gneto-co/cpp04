@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_H
-#define CLAPTRAP_H
+#ifndef ANIMAL_H
+#define ANIMAL_H
 
 /* INCLUDES */
 
@@ -20,6 +20,7 @@
 #include <iostream>
 #include <string>
 #include <termios.h>
+#include <cstdio>
 
 /* DEFINES */
 
@@ -31,7 +32,7 @@
         PRINT << ENDL;
 #define RESEND RESET << ENDL
 
-#define OFF_MESSAGE(name) PRINT << MAGENTA << name << " is off" << RESEND;
+#define FT_MSG(name) PRINT << MAGENTA ITALICS << name << " called" << RESEND;
 
 /* DEFINE COLORS */
 
@@ -59,6 +60,7 @@
 #define MAGENTA "\033[35m"
 #define CYAN "\033[36m"
 #define WHITE "\033[37m"
+#define ORANGE "\033[38;2;255;140;0m"
 /* ..Bright Text (90-97) */
 #define BRIGHT_BLACK "\033[90m" // Gray
 #define BRIGHT_RED "\033[91m"

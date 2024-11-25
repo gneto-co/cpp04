@@ -6,11 +6,11 @@
 #    By: gneto-co <gneto-co@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 13:11:28 by tblaase           #+#    #+#              #
-#    Updated: 2024/11/20 14:32:28 by gneto-co         ###   ########.fr        #
+#    Updated: 2024/11/25 12:24:37 by gneto-co         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	ClapTrap
+NAME		=	Animal
 EX			=	01
 
 CC			=	c++
@@ -32,7 +32,7 @@ UP			=	\033[A
 CUT			=	\033[K
 
 #source files
-SRC_FILES	=	main.cpp ClapTrap.cpp ScavTrap.cpp
+SRC_FILES	=	main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
 
@@ -47,7 +47,7 @@ all: $(NAME)
 	@printf "$(GREEN) ___ _ _   |   |_  |     ___|  _|  |    _| _| |_ _| |_ \n$(RESET)"
 	@printf "$(GREEN)| -_|_'_|  | | |_| |_   | . |  _|  |   |_ |_   _|_   _|\n$(RESET)"
 	@printf "$(GREEN)|___|_,_|  |___|_____|  |___|_|    |_____|  |_|   |_|  \n$(RESET)"
-	@printf "$(GREEN)                                                       \n$(RESET)"
+	@printf "$(GREEN)                                                     \n$(RESET)"
 	@printf "\n"
 
 #compile the executable

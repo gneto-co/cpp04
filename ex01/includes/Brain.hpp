@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gneto-co <gneto-co@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 12:30:12 by gneto-co          #+#    #+#             */
-/*   Updated: 2024/10/28 14:00:34 by gneto-co         ###   ########.fr       */
+/*   Updated: 2024/11/25 11:27:39 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
-#include "ClapTrap.h"
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
+#include "Animal.h"
 
-class ClapTrap
+class Brain
 {
-protected:
-	STRING _name;
-	int _hit_points;
-	int _energy_points;
-	int _attack_damage;
+private:
+	STRING _ideas[100];
 
 public:
-	ClapTrap();
-	ClapTrap(STRING name);
-	ClapTrap(const ClapTrap &copy);
-	~ClapTrap();
-	ClapTrap &operator=(const ClapTrap &src);
+	Brain();
+	Brain(const Brain &copy);
+	~Brain();
+	Brain &operator=(const Brain &src);
 
 	/* --- --- --- */
 
-	void attack(const std::string &target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
+	void setIdea(size_t number, STRING idea);
+	STRING getIdea(size_t number) const;
 };
 
 #endif

@@ -6,61 +6,93 @@
 /*   By: gneto-co <gneto-co@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 00:48:02 by gneto-co          #+#    #+#             */
-/*   Updated: 2024/11/20 14:41:30 by gneto-co         ###   ########.fr       */
+/*   Updated: 2024/11/25 14:14:37 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ClapTrap.hpp"
-#include "../includes/ScavTrap.hpp"
+#include "../includes/Animal.hpp"
+#include "../includes/Dog.hpp"
+#include "../includes/Cat.hpp"
+#include "../includes/WrongAnimal.hpp"
+#include "../includes/WrongCat.hpp"
 
 int main(void)
 {
-	/* ClapTrap tests */
 	{
-		ClapTrap wall_e("wall-e");
-		SPACER(1)
+		Animal *penguin = new Animal("penguin");
 
-		// tests
-		wall_e.beRepaired(1);
-		wall_e.attack("bad_guy");
-		wall_e.takeDamage(10);
-		wall_e.beRepaired(1);
+		penguin->printType();
+		penguin->makeSound();
 
-		// kill him
-		wall_e.takeDamage(20);
-
-		// tests
-		wall_e.takeDamage(2);
-		wall_e.beRepaired(1);
-		wall_e.attack("bad_guy");
-		SPACER(1)
+		delete penguin;
 	}
 
 	SPACER(5)
-
-	/* ScavTrap tests */
 	{
-		ScavTrap R2D2("R2D2");
-		SPACER(1)
+		Dog *dog = new Dog();
 
-		// tests
-		R2D2.guardGate();
-		R2D2.beRepaired(1);
-		R2D2.attack("bad_guy");
-		R2D2.takeDamage(10);
-		R2D2.beRepaired(1);
-		R2D2.guardGate();
-
-		// kill him
-		R2D2.takeDamage(200);
-
-		// tests
-		R2D2.beRepaired(1);
-		R2D2.attack("bad_guy");
-		R2D2.takeDamage(10);
-		R2D2.guardGate();
-		SPACER(1)
+		dog->printType();
+		dog->makeSound();
+		dog->setIdea(0, "Bark");
+		dog->setIdea(1, "Bark");
+		dog->setIdea(2, "Bark");
+		dog->showIdeas();
+		delete dog;
 	}
 
+	SPACER(5)
+	{
+		Cat *cat = new Cat();
+
+		cat->printType();
+		cat->makeSound();
+		cat->setIdea(0, "Sleep");
+		cat->setIdea(1, "Eat");
+		cat->setIdea(2, "Repeat");
+		cat->showIdeas();
+		
+		SPACER(1)
+
+		Cat *copy_cat = cat;
+		copy_cat->printType();
+		copy_cat->makeSound();
+		copy_cat->showIdeas();
+
+		delete cat;
+	}
+
+	SPACER(5)
+	{
+		size_t nb = 4;
+		Animal *zoo[nb];
+
+		for (size_t i = 0; i < nb; i++)
+		{
+			if (i % 2)
+				zoo[i] = new Cat();
+			else
+				zoo[i] = new Dog();
+			zoo[i]->printType();
+			zoo[i]->makeSound();
+			SPACER(1)
+		}
+
+		for (size_t i = 0; i < nb; i++)
+		{
+			delete zoo[i];
+			SPACER(1)
+		}
+	}
+
+	/*
+		SPACER(2)
+		{
+			WrongAnimal *w_cat = new WrongCat();
+
+			w_cat->printType();
+			w_cat->makeSound();
+			delete w_cat;
+		}
+	 */
 	return 0;
 }

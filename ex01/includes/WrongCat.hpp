@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gneto-co <gneto-co@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 12:30:12 by gneto-co          #+#    #+#             */
-/*   Updated: 2024/10/28 14:00:34 by gneto-co         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:54:22 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
-#include "ClapTrap.hpp"
+#ifndef WRONG_CAT_HPP
+#define WRONG_CAT_HPP
+#include "WrongAnimal.hpp"
 
-class FragTrap : public ClapTrap
+class WrongCat : public WrongAnimal
 {
 public:
-	FragTrap();
-	FragTrap(STRING name);
-	FragTrap(const FragTrap &copy);
-	~FragTrap();
-	FragTrap &operator=(const FragTrap &src);
+	WrongCat();
+	WrongCat(const WrongCat &copy);
+	~WrongCat();
+	WrongCat &operator=(const WrongCat &src);
 
 	/* --- --- --- */
 
-	void highFivesGuys(void);
+	void makeSound(void) const;
 };
 
 #endif

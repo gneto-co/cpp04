@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                         :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gneto-co <gneto-co@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 12:30:12 by gneto-co          #+#    #+#             */
-/*   Updated: 2024/10/28 14:00:34 by gneto-co         ###   ########.fr       */
+/*   Updated: 2024/11/25 12:31:35 by gneto-co         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
-#include "ClapTrap.hpp"
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
+#include "Animal.h"
+#include "Brain.hpp"
 
-class ScavTrap : public ClapTrap
+class Animal
 {
-private:
-	bool _on_gate;
+protected:
+	STRING _type;
 
 public:
-	ScavTrap();
-	ScavTrap(STRING name);
-	ScavTrap(const ScavTrap &copy);
-	~ScavTrap();
-	ScavTrap &operator=(const ScavTrap &src);
+	Animal();
+	Animal(STRING name);
+	Animal(const Animal &copy);
+	virtual ~Animal();
+	Animal &operator=(const Animal &src);
 
 	/* --- --- --- */
 
-	void attack(const std::string &target);
-	void guardGate();
+	virtual void makeSound() const;
+	void printType() const;
+	STRING getType() const;
 };
 
 #endif
