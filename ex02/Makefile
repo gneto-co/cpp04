@@ -6,11 +6,11 @@
 #    By: gneto-co <gneto-co@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/23 13:11:28 by tblaase           #+#    #+#              #
-#    Updated: 2024/11/20 14:53:24 by gneto-co         ###   ########.fr        #
+#    Updated: 2024/11/25 14:26:59 by gneto-co         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	ClapTrap
+NAME		=	Animal
 EX			=	02
 
 CC			=	c++
@@ -32,7 +32,7 @@ UP			=	\033[A
 CUT			=	\033[K
 
 #source files
-SRC_FILES	=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRC_FILES	=	main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
 
